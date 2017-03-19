@@ -6,8 +6,13 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
+<<<<<<< HEAD
   //password : '212211dgs',  //212211dgs / admin
   password : 'admin',  //212211dgs / admin
+=======
+  password : 'admin',  //212211dgs / admin
+  //password : 'admin',  //212211dgs / admin
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
   database : 'artinet'
 });
 
@@ -15,8 +20,13 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host     : 'localhost',
   user     : 'root',
+<<<<<<< HEAD
   //password : '212211dgs',  //212211dgs / admin
   password : 'admin',  //212211dgs / admin
+=======
+  password : 'admin',  //212211dgs / admin
+  //password : 'admin',  //212211dgs / admin
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
   database : 'artinet'
 });
 
@@ -46,7 +56,14 @@ router.get('/', function(req, res, next) {
     var url = "https://api.spotify.com/v1/search?q="+busqueda+"&type=artist&limit="+limit+"&offset="+offset;
     var datos = "dddd";
 
+<<<<<<< HEAD
 
+=======
+    for (var aa = 0 ; aa < 5; aa++){
+      setTimeout(function(){
+        console.log('pasa');
+      }, 1000);
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
 
         request(url, function (error, response, body, datos) {
           if (error != null){
@@ -54,7 +71,10 @@ router.get('/', function(req, res, next) {
           }else{
             console.log(url);
             resultado = JSON.parse(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
             for (var key in resultado.artists.items){
               var value =  resultado.artists.items[key];
               console.log(value.name);
@@ -67,11 +87,27 @@ router.get('/', function(req, res, next) {
               correcto = false;
             }*/
           }
+<<<<<<< HEAD
 
 
         });
 
           res.send(resultado);
+=======
+        });
+
+        if(aa==4){
+          res.send(datos);
+        }
+    }
+
+
+console.log('datosssssssss ' + datos);
+    correcto = false;
+    if (correcto){
+
+    }
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
 
     //res.render('index', { title: 'Express' });
 
@@ -81,8 +117,15 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/1', function(req, res, next) {
+<<<<<<< HEAD
 var data ="";
 
+=======
+
+res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+var data ="";
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
    /*
     connection.query('SELECT * FROM artists', function (error, results, fields) {
       if (error) throw error;
@@ -95,8 +138,14 @@ var data ="";
     pool.query('SELECT * FROM artists', function (error, results, fields) {
       if (error) throw error;
       data = (results);
+<<<<<<< HEAD
 
       res.json([{id:"12",data:"123556",details:{"name":"alan","age":"12"}}]);
+=======
+	
+	    res.json(data);
+      //res.json([{id:"12",data:"123556",details:{"name":"alan","age":"12"}}]);
+>>>>>>> c134da91d7900ff73861679b383248c1c55f0205
 
       /*for (var i = 0; i < results.length; i++) {
       console.log(  results[i].name);
