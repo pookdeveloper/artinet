@@ -91,8 +91,10 @@ console.log('datosssssssss ' + datos);
 
 /* GET home page. */
 router.get('/1', function(req, res, next) {
-var data ="";
 
+res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+var data ="";
    /*
     connection.query('SELECT * FROM artists', function (error, results, fields) {
       if (error) throw error;
