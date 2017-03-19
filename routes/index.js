@@ -107,8 +107,9 @@ var data ="";
     pool.query('SELECT * FROM artists', function (error, results, fields) {
       if (error) throw error;
       data = (results);
-
-      res.json([{id:"12",data:"123556",details:{"name":"alan","age":"12"}}]);
+	
+	    res.json(data);
+      //res.json([{id:"12",data:"123556",details:{"name":"alan","age":"12"}}]);
 
       /*for (var i = 0; i < results.length; i++) {
       console.log(  results[i].name);
