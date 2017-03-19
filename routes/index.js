@@ -6,8 +6,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  //password : '212211dgs',  //212211dgs / admin
-  password : 'admin',  //212211dgs / admin
+  password : '212211dgs',  //212211dgs / admin
   database : 'artinet'
 });
 
@@ -15,8 +14,7 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host     : 'localhost',
   user     : 'root',
-  //password : '212211dgs',  //212211dgs / admin
-  password : 'admin',  //212211dgs / admin
+  password : '212211dgs',  //212211dgs / admin
   database : 'artinet'
 });
 
