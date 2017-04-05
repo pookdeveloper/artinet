@@ -30,6 +30,12 @@ connection.connect(function(err) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
+   res.setHeader('Access-Control-Allow-Origin', '*');
+   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+   res.setHeader('Access-Control-Allow-Credentials', true);
+
+
     /*connection.connect();
     connection.query('SELECT * FROM artists', function (error, results, fields) {
       if (error) throw error;
@@ -79,6 +85,16 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/1', function(req, res, next) {
+  /*
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  */
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+
 var data ="";
 
    /*
